@@ -56,9 +56,8 @@ Resources:
           sudo apt-get install apache2 -y
           sudo systemctl start apache2.service
           cd /var/www/html
-          echo "Udacity Demo Web Server Up and Running!"          
+          echo "Udacity Demo Web Server Up and Running!" > index.html         
       ImageId: ami-005de95e8ff495156
-      KeyName: VocareumKey2
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
@@ -112,18 +111,22 @@ Resources:
   WebAppTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      HealthCheckIntervalSeconds: 10
+      HealthCheckIntervalSeconds: 30
       HealthCheckPath: /
       HealthCheckProtocol: HTTP
       HealthCheckTimeoutSeconds: 8
       HealthyThresholdCount: 2
-      Port: 8080
+      Port: 80
       Protocol: HTTP
       UnhealthyThresholdCount: 5
       VpcId: 
         Fn::ImportValue:
-          Fn::Sub: "${EnvironmentName}-VPCID"          
-
+          Fn::Sub: "${EnvironmentName}-VPCID"    
+  WebAppLoadBalancerURL:
+    Description: Public URL of the Load Balancer
+    Value: !Join [ "", [ 'http://udagr-WebAp-DZ8MHJV4BLPX-1594677737.us-east-1.elb.amazonaws.com', !GetAtt WebAppLB.DNSName ]]
+    Export:
+      Name: !Sub ${EnvironmentName}-LoadBalancer-URL
   ProfileWithRolesForUdagramApp:
     Type: AWS::IAM::InstanceProfile
     Properties:
