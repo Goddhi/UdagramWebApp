@@ -1,1 +1,1 @@
-Linl to the live App :  http://udagr-webap-1qtrg88cne6cz-2003421978.us-east-1.elb.amazonaws.com/
+Link to the live App :  http://udagr-webap-1qtrg88cne6cz-2003421978.us-east-1.elb.amazonaws.com/
