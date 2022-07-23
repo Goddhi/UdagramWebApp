@@ -7,7 +7,7 @@
 <img src="ArchitectureDiagram.jpeg" alt="Infrastructure Diagram for the WebAPP" width="800" height="500">
 
 
-<p> This a Udagram Web app  built with AWS cloudformation script </p>
+<p>Udagram Web app  built with AWS cloudformation script </p>
 
 <p>The UdagramNetwork.yaml file contains script used to build a network stack for the web server.</p>
 
@@ -67,5 +67,9 @@ Deploy using the following command
 
 `./create.sh UdagramWebApp UdagramServer.yaml serverParameters.json` 
 
+<h3>Built With</h3>
 
+- <a href="https://aws.amazon.com/">Amazon AWS</a>: Cloud Services
+- <a href="https://aws.amazon.com/cli/">AWS CLI</a>: Command-line tool for AWS
+- <a href="https://aws.amazon.com/cloudformation/">CloudFormation</a>: Infrastrcuture as code
 
