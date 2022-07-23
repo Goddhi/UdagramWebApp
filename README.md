@@ -9,11 +9,11 @@
 
 <p> This a Udagram Web app  built with AWS cloudformation script </p>
 
-<p>The UdagramNetwork file contains script used to build a network stack for the web server.</p>
+<p>The UdagramNetwork.yaml file contains script used to build a network stack for the web server.</p>
 
-<p>The UdagramServer file contains script used to build the web server.</p>
+<p>The UdagramServer.yaml file contains script used to build the web server.</p>
 
-<p> The UdagramNetwork file includes two availability zones and it also contains:  </p>
+<p> The UdagramNetwork.yaml file includes two availability zones and it also contains:  </p>
 
 - VPC: It host all resources both the Public Subnet and Private Subnet including NAT gateways, routable etc.
 
@@ -39,7 +39,7 @@
 
 - AutoScallingGroup: scales the web server based on end user traffic to the webApp.
 
-- WebAppTargetGroup: A set of rule for the loadbalancer. HealthCheckIntervalSeconds set at 30s and  
+- WebAppTargetGroup: A set of rules for the loadbalancer. HealthCheckIntervalSeconds set at 30s and  
   HealthCheckTimeoutSeconds set at 8s
 
 
@@ -53,7 +53,7 @@ This resource should be deploy first
 
 Deploy using the following command
 
-./create.sh network UdagramNetwork.yaml networkParameters.json 
+`./create.sh network UdagramNetwork.yaml networkParameters.json` 
 
 
 
@@ -65,7 +65,7 @@ This resource should be deploy after the network resource
 
 Deploy using the following command
 
-./create.sh UdagramWebApp UdagramServer.yaml serverParameters.json 
+`./create.sh UdagramWebApp UdagramServer.yaml serverParameters.json` 
 
 
 
