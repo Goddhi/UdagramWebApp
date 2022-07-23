@@ -67,6 +67,8 @@ Deploy using the following command
 
 `./create.sh UdagramWebApp UdagramServer.yaml serverParameters.json` 
 
+<h4> Get the URL of the Udagram Web App in the CloudFormation stack Output section </h4>
+
 <h3>Built With</h3>
 
 - <a href="https://aws.amazon.com/">Amazon AWS</a>: Cloud Services
